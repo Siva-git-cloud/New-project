@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class OrangeHRML_AdminPage {
     public static void main(String args[]) throws InterruptedException {
@@ -45,10 +47,17 @@ public class OrangeHRML_AdminPage {
          //Thread.sleep(3000);
 
          //Click the User Role down arrow
-        //WebElement userRoleClick = driver.findElement(By.xpath("//h6[text()='Add User']/..//following-sibling::div//div[text()='-- Select --']"));
-        //userRoleClick.click();
-        WebElement UserRoleClick=driver.findElement(By.xpath("//label[text()='User Role']/..//following-sibling::div//div[text()='Admin']"));
-        UserRoleClick.click();
+        WebElement dropRoleClick = driver.findElement(By.xpath("//label[text()='User Role']/..//following-sibling::div//div[text()='-- Select --']"));
+        Select option = new Select(dropRoleClick);
+        List<WebElement> Useroptions = option.getOptions();
+        for(WebElement values :Useroptions){
+            System.out.println(values.getText());
+        }
+
+        option.selectByVisibleText("Admin");
+        //dropRoleClick.click();
+        //WebElement UserRoleClick=driver.findElement(By.xpath("//label[text()='User Role']/..//following-sibling::div//span[text()='Admin']"));
+        //UserRoleClick.click();
           //Thread.sleep(2000);
         //Select the Downarrow value
         //WebElement statusClick = driver.findElement(By.xpath("//label[text()='Status']/..//following-sibling::div//div[text()='Enabled']"));
