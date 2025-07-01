@@ -5,13 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
+
 public class Table_Xpath {
     public static void main(String [] args){
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().window().maximize();
+
         String beforeXpath ="//table[@name='courses']//tbody//tr[";
         String afterXpath = "]//td[1]";
+
         System.out.println("*****  Instructor Names  *****");
         for(int i=2; i<=11; i++){
             String finalXpath=beforeXpath+i+afterXpath;
