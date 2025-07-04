@@ -15,18 +15,21 @@ import java.util.List;
 public class Suggession_Input {
     public static void main(String[] args){
         WebDriver driver=new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         driver.navigate().to("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().window().maximize();
         WebElement enterSuggestion = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='autocomplete']")));
         enterSuggestion.sendKeys("India");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='ui-menu-item']")));
         List<WebElement> values = driver.findElements(By.xpath("//li[@class='ui-menu-item']//div"));
         for (WebElement options :values){
             System.out.println(options.getText());
             if (options.getText().equalsIgnoreCase("India")){
                 options.click();
-                driver.quit();
+                break;
             }
         }
+        //driver.quit();
     }
+
 }
