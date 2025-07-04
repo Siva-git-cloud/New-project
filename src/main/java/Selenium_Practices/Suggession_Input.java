@@ -10,8 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+
 //Suggession Class Example--> Used URL -->https://rahulshettyacademy.com/AutomationPractice/
 // We need to enter the values in Suggession Class Example box it has to eneter the data in that need to display the values
+
 public class Suggession_Input {
     public static void main(String[] args){
         WebDriver driver=new ChromeDriver();
