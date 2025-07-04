@@ -23,12 +23,12 @@ public class RadioButton_CheckBok_Test {
         driver.manage().window().maximize();
         WebElement radiobuttonclick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='radioButton' and @value='radio3']")));
         radiobuttonclick.click();
-        WebElement checkbokclick = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='checkBoxOption2']")));
+        WebElement checkbokclick = wait.until(ExpectedConditions.elementToBeClickable(By.id("checkBoxOption2")));
         checkbokclick.click();
 
         System.out.println("Radio Button selected: " + radiobuttonclick.isSelected());
         System.out.println("Checkbox selected: " + checkbokclick.isSelected());
-        //driver.quit();
+        driver.quit();
     }
 
 }
