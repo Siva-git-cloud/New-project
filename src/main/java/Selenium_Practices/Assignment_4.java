@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Testpage_Eviltester {
+//info:: This calss used for get values from table cell-->eviltester
+
+public class Assignment_4 {
     public static void main(String[] args){
         WebDriver driver = new ChromeDriver();
         //Navigate to test page eviltester
@@ -14,7 +16,7 @@ public class Testpage_Eviltester {
         // To find the Xpath for tableTestPage link
         WebElement tableTestPage = driver.findElement(By.xpath("//a[@id='tablestest']"));
         tableTestPage.click();
-        WebElement alanAmount = driver.findElement(By.xpath("//tr//td[text()=\"Alan\"]/..//following-sibling::td[text()='12']"));
+        WebElement alanAmount = driver.findElement(By.xpath("//tr//td[text()='Alan']/..//following-sibling::td[text()='12']"));
         System.out.println("Alan amount is :: "+alanAmount.getText());
         WebElement  bobAmount = driver.findElement(By.xpath("//tr//td[text()='Bob']/..//following-sibling::td[text()='23']"));
         System.out.println("Bob amount is :: "+bobAmount.getText());

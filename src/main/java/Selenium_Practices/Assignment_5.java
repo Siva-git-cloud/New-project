@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.List;
-
-public class Table_Xpath {
+//info:: This class is used for rertive the data from table for pticular colum
+public class Assignment_5 {
     public static void main(String [] args){
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("https://rahulshettyacademy.com/AutomationPractice/");

@@ -9,7 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class OrangeHRML_System_Users_Validation {
+//info:: this class is used for validate the data from Orange HRM
+
+
+public class Assignment_3 {
     public static void main(String args[]) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         //driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");

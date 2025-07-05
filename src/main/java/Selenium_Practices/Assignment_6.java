@@ -5,16 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
 
 //Suggession Class Example--> Used URL -->https://rahulshettyacademy.com/AutomationPractice/
-// We need to enter the values in Suggession Class Example box it has to eneter the data in that need to display the values
+//inf0:: We need to enter the values in Suggession Class Example box it has to eneter the data in that need to display the values
 
-public class Suggession_Input {
+public class Assignment_6 {
     public static void main(String[] args){
         WebDriver driver=new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));

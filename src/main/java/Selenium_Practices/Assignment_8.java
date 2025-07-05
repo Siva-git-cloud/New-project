@@ -9,8 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+//info:: This class is used to mouseover the element
 
-public class Mouseover_Test {
+public class Assignment_8 {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
