@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-//info :: This class is used for the aleart pop-ups
+//info :: This class is used for the aleart pop-ups in rahulshettyacademy
 public class Assignment_9 {
     public static void main(String[] args){
         WebDriver driver=new ChromeDriver();
