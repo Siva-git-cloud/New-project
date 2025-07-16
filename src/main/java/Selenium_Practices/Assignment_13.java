@@ -13,6 +13,8 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
+//info This class is used to add the employee details in admin-->organization-->location and add form
+
 public class Assignment_13 {
     public static void main(String[] args){
         WebDriver driver = new ChromeDriver();
@@ -24,7 +26,8 @@ public class Assignment_13 {
 
 
         //Finding the username
-        WebElement UserName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+        WebElement UserName = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.name("username")));
         //Enetr the User Name
         UserName.sendKeys("Admin");
         //Finding the Password
@@ -37,10 +40,12 @@ public class Assignment_13 {
 
 
         //Click adminButton
-        WebElement adminButton =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Admin']")));
+        WebElement adminButton =wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[text()='Admin']")));
         adminButton.click();
         //Click Organization dropdown
-        WebElement organizationButton=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//nav[@aria-label='Topbar Menu']/..//following-sibling::span[@class='oxd-topbar-body-nav-tab-item' and  text()='Organization ']")));
+        WebElement organizationButton=wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//nav[@aria-label='Topbar Menu']/..//following-sibling::span[@class='oxd-topbar-body-nav-tab-item' and  text()='Organization ']")));
         organizationButton.click();
         //Click location button
         WebElement locationclick=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Locations")));
@@ -54,7 +59,8 @@ public class Assignment_13 {
                 By.xpath("//div[@role='option']//span[text()='United States']")));
         SelectCountry.click();
         //Click SearchButton
-        WebElement searchbutton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+        WebElement searchbutton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@type='submit']")));
         searchbutton.click();
        /* If Country Records are found then we used the */
 
@@ -63,22 +69,23 @@ public class Assignment_13 {
                By.xpath("//div[@role='row']//div[text()=\"United States\"]"))));
 
         //If country selected value is present then tick the selected country values
-        if (!checkcountryName.isEmpty()){
+        if (!checkcountryName.isEmpty()) {
             WebElement tickbox = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath("//div[@role=\"columnheader\"]//input[@type='checkbox']/..//following-sibling::span")));
             tickbox.click();
-        }
-        //Click delete Button
-        WebElement deletebutton=wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[@role='row']/..//following-sibling::div//button[@type='button']//i[@class='oxd-icon bi-trash']")));
-        deletebutton.click();
 
-        //Click Delete Alreat Button
-        WebElement deleteAlreat = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//button[@type='button' and text()=' Yes, Delete ']")));
-        deleteAlreat.click();
-        // optional: wait until the original rows disappear
-        wait.until(ExpectedConditions.stalenessOf(checkcountryName.get(0)));
+            //Click delete Button
+            WebElement deletebutton = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//div[@role='row']/..//following-sibling::div//button[@type='button']//i[@class='oxd-icon bi-trash']")));
+            deletebutton.click();
+
+            //Click Delete Alreat Button
+            WebElement deleteAlreat = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath("//button[@type='button' and text()=' Yes, Delete ']")));
+            deleteAlreat.click();
+            // optional: wait until the original rows disappear
+            wait.until(ExpectedConditions.stalenessOf(checkcountryName.get(0)));
+        }
 
 
         //Click add Button Form
@@ -86,10 +93,10 @@ public class Assignment_13 {
         addButton.click();
         //Enter the Value in Name Box
         WebElement enterName =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()=\"Name\"]/..//following-sibling::div//input[@class='oxd-input oxd-input--active']")));
-        enterName.sendKeys("USA_Testing");
+        enterName.sendKeys("USA_Testing-2");
         //Eneter the Phone Number in Phone value
         WebElement phonenumber=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()=\"Phone\"]/..//following-sibling::div//input[@modelmodifiers='[object Object]']")));
-        phonenumber.sendKeys("9987123456");
+        phonenumber.sendKeys("9971234567");
         //Click country dropdown select Button
         WebElement formcountryDropdown=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//label[text()='Country']/following::div[@class='oxd-select-text-input'])")));
         formcountryDropdown.click();
@@ -106,5 +113,22 @@ public class Assignment_13 {
         WebElement saveButton=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()=' * Required']/..//button[text()=' Save ']")));
         saveButton.click();
         //driver.close();
+
+        wait.until(ExpectedConditions.stalenessOf(checkcountryName.get(0)));
+        //Click CountryDropDown
+        WebElement repeatcountryDropdown=wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("(//label[text()='Country']/following::div[@class='oxd-select-text-input'])")));
+        repeatcountryDropdown.click();
+        //Click Select country & Here Eneter Country Name
+        WebElement repeatSelectCountry = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@role='option']//span[text()='United States']")));
+        repeatSelectCountry.click();
+        //Click SearchButton
+        WebElement repeatsearchbutton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[@type='submit']")));
+        repeatsearchbutton.click();
+
+
     }
+
 }
