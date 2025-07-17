@@ -33,23 +33,23 @@ public class Assignment_14 {
         Select select=new Select(options);
         select.selectByVisibleText("100");
         //finding the elements of Country Name
-       List<WebElement> startingElement=driver.findElements(By.xpath("//div[@class=\"datatable-container\"]//table//tbody//td//a[@data-country]"));
+       List<WebElement> countrysElement=driver.findElements(By.xpath("//div[@class=\"datatable-container\"]//table//tbody//td//a[@data-country]"));
        //Finding the element of World share
-       List<WebElement> shareElement= driver.findElements(By.xpath("//div[@class='datatable-container']//table//tbody//tr[@id]//td[12]"));
+       List<WebElement> worldshareElement= driver.findElements(By.xpath("//div[@class='datatable-container']//table//tbody//tr[@id]//td[12]"));
        int i=1;
        //Doing Iteration for Country Name
-       for(WebElement countryName : startingElement) {
+       for(WebElement countryName : countrysElement) {
            System.out.println("Country Names :: " +i +")"+ countryName.getText());
            i++;
        }
         int j=1;
         //Doing Iteration for World share
-           for (WebElement share : shareElement) {
+           for (WebElement share : worldshareElement) {
 
                System.out.println("World Share of Country :: " +j  +")" +share.getText());
                j++;
            }
            //Driver closing
-        driver.close();
+        //driver.close();
     }
 }

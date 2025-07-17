@@ -1,9 +1,6 @@
 package Selenium_Practices;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -20,7 +17,7 @@ public class Assignment_13 {
         WebDriver driver = new ChromeDriver();
         //to navigate the url
         driver.navigate().to("https://opensource-demo.orangehrmlive.com");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(45));
         //Browser Maximize
         driver.manage().window().maximize();
 
@@ -93,10 +90,10 @@ public class Assignment_13 {
         addButton.click();
         //Enter the Value in Name Box
         WebElement enterName =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()=\"Name\"]/..//following-sibling::div//input[@class='oxd-input oxd-input--active']")));
-        enterName.sendKeys("USA_Testing-2");
+        enterName.sendKeys("USA_Testing-3");
         //Eneter the Phone Number in Phone value
         WebElement phonenumber=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()=\"Phone\"]/..//following-sibling::div//input[@modelmodifiers='[object Object]']")));
-        phonenumber.sendKeys("9971234567");
+        phonenumber.sendKeys("9971434567");
         //Click country dropdown select Button
         WebElement formcountryDropdown=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//label[text()='Country']/following::div[@class='oxd-select-text-input'])")));
         formcountryDropdown.click();
@@ -114,16 +111,34 @@ public class Assignment_13 {
         saveButton.click();
         //driver.close();
 
-        wait.until(ExpectedConditions.stalenessOf(checkcountryName.get(0)));
+
+        WebElement DescendingButton=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Country']//span[text()='Descending']")));
+        DescendingButton.click();
+
+
+        //WebElement scrollUP =wait.until(
+          //      ExpectedConditions.refreshed(
+            //            ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Country']"))));
+       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", scrollUP);
+
+
+
+        WebElement reSelecet =wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//label[text()='Country']/following::div[@class='oxd-select-text-input']"))));
+        reSelecet.click();
+
         //Click CountryDropDown
         WebElement repeatcountryDropdown=wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("(//label[text()='Country']/following::div[@class='oxd-select-text-input'])")));
         repeatcountryDropdown.click();
         //Click Select country & Here Eneter Country Name
+
         WebElement repeatSelectCountry = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//div[@role='option']//span[text()='United States']")));
         repeatSelectCountry.click();
+
         //Click SearchButton
+
         WebElement repeatsearchbutton = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[@type='submit']")));
         repeatsearchbutton.click();
